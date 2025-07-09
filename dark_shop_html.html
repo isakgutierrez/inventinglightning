@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Isak Gutierrez Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ISAK GUTIERREZ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+            <div class="cart" onclick="toggleCart()">
+                <span>🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Fine Art Shop</h1>
+            <p class="page-subtitle">Limited edition prints, photo books, and exclusive collections available for collectors and photography enthusiasts</p>
+        </div>
+    </section>
+
+    <!-- Shop Categories -->
+    <section class="shop-categories-section">
+        <div class="container">
+            <div class="shop-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="prints">Fine Art Prints</button>
+                <button class="category-btn" data-category="books">Photo Books</button>
+                <button class="category-btn" data-category="digital">Digital Products</button>
+                <button class="category-btn" data-category="limited">Limited Edition</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product -->
+    <section class="featured-product">
+        <div class="container">
+            <div class="product-showcase">
+                <div class="product-images">
+                    <div class="main-product-image">
+                        <div class="photo-frame large">
+                            <div class="placeholder-image">Urban Solitude Collection - Limited Edition Print Set</div>
+                            <div class="product-badge">Limited Edition</div>
+                        </div>
+                    </div>
+                    <div class="product-thumbnails">
+                        <div class="thumbnail">
+                            <div class="photo-frame small">
+                                <div class="placeholder-image">Print 1</div>
+                            </div>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="photo-frame small">
+                                <div class="placeholder-image">Print 2</div>
+                            </div>
+                        </div>
+                        <div class="thumbnail">
+                            <div class="photo-frame small">
+                                <div class="placeholder-image">Print 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h2>Urban Solitude Collection</h2>
+                    <p class="product-price">$850</p>
+                    <p class="product-description">A curated set of three archival pigment prints from the acclaimed Urban Solitude series. Each print is hand-signed and numbered, limited to only 25 editions worldwide. Includes certificate of authenticity and archival storage box.</p>
+                    
+                    <div class="product-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Edition Size:</span>
+                            <span class="spec-value">25 + 5 AP</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Print Size:</span>
+                            <span class="spec-value">16" x 20" each</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Medium:</span>
+                            <span class="spec-value">Archival Pigment Print</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Paper:</span>
+                            <span class="spec-value">Hahnemühle Photo Rag</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-options">
+                        <label for="frame-option">Framing Options:</label>
+                        <select id="frame-option" onchange="updateProductPrice()">
+                            <option value="unframed" data-price="0">Unframed (+$0)</option>
+                            <option value="black-frame" data-price="180">Black Frame (+$180)</option>
+                            <option value="white-frame" data-price="180">White Frame (+$180)</option>
+                            <option value="natural-frame" data-price="220">Natural Wood Frame (+$220)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="cta-button primary featured-add-cart" onclick="addToCart('urban-solitude-collection', 'Urban Solitude Collection', getCurrentPrice())">Add to Cart</button>
+                        <button class="cta-button secondary" onclick="addToWishlist('urban-solitude-collection')">♡ Wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-grid">
+                <!-- Fine Art Prints -->
+                <div class="shop-item" data-category="prints limited">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Street Portrait #1</div>
+                        <span class="product-badge">Limited</span>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Street Portrait #1</h4>
+                        <p class="shop-description">Archival pigment print, signed and numbered</p>
+                        <p class="shop-edition">Edition of 50</p>
+                        <p class="shop-price">$350</p>
+                        <button class="add-to-cart" onclick="addToCart('street-portrait-1', 'Street Portrait #1', 350)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="prints">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">California Coast Sunset</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">California Coast Sunset</h4>
+                        <p class="shop-description">Metal print with float mount</p>
+                        <p class="shop-edition">Open edition</p>
+                        <p class="shop-price">$275</p>
+                        <button class="add-to-cart" onclick="addToCart('coast-sunset', 'California Coast Sunset', 275)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="prints limited">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Urban Architecture Study</div>
+                        <span class="product-badge">Limited</span>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Urban Architecture Study</h4>
+                        <p class="shop-description">Fine art paper print with signature</p>
+                        <p class="shop-edition">Edition of 30</p>
+                        <p class="shop-price">$425</p>
+                        <button class="add-to-cart" onclick="addToCart('architecture-study', 'Urban Architecture Study', 425)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Photo Books -->
+                <div class="shop-item" data-category="books">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Collected Works 2020-2024</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Collected Works 2020-2024</h4>
+                        <p class="shop-description">Hardcover photography monograph, 120 pages</p>
+                        <p class="shop-edition">First edition</p>
+                        <p class="shop-price">$85</p>
+                        <button class="add-to-cart" onclick="addToCart('collected-works', 'Collected Works 2020-2024', 85)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="books limited">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Urban Solitude - Artist Book</div>
+                        <span class="product-badge">Limited</span>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Urban Solitude - Artist Book</h4>
+                        <p class="shop-description">Hand-bound limited edition with signed print</p>
+                        <p class="shop-edition">Edition of 100</p>
+                        <p class="shop-price">$150</p>
+                        <button class="add-to-cart" onclick="addToCart('urban-solitude-book', 'Urban Solitude - Artist Book', 150)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="books">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Portrait Techniques Zine</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Portrait Techniques Zine</h4>
+                        <p class="shop-description">Educational zine with behind-the-scenes insights</p>
+                        <p class="shop-edition">Self-published</p>
+                        <p class="shop-price">$25</p>
+                        <button class="add-to-cart" onclick="addToCart('portrait-zine', 'Portrait Techniques Zine', 25)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Digital Products -->
+                <div class="shop-item" data-category="digital">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Lightroom Preset Collection</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Street Photography Presets</h4>
+                        <p class="shop-description">25 Lightroom presets for urban photography</p>
+                        <p class="shop-edition">Digital download</p>
+                        <p class="shop-price">$45</p>
+                        <button class="add-to-cart" onclick="addToCart('street-presets', 'Street Photography Presets', 45)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="digital">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Portrait Lighting Guide</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Portrait Lighting Masterclass</h4>
+                        <p class="shop-description">3-hour video tutorial with lighting setups</p>
+                        <p class="shop-edition">Digital course</p>
+                        <p class="shop-price">$95</p>
+                        <button class="add-to-cart" onclick="addToCart('lighting-course', 'Portrait Lighting Masterclass', 95)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="digital">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Mobile Photography Tips</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Mobile Photography E-book</h4>
+                        <p class="shop-description">Comprehensive guide to smartphone photography</p>
+                        <p class="shop-edition">PDF download</p>
+                        <p class="shop-price">$20</p>
+                        <button class="add-to-cart" onclick="addToCart('mobile-ebook', 'Mobile Photography E-book', 20)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Prints -->
+                <div class="shop-item" data-category="prints">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Desert Landscape Series</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Desert Solitude #3</h4>
+                        <p class="shop-description">Canvas print with gallery wrap</p>
+                        <p class="shop-edition">Open edition</p>
+                        <p class="shop-price">$225</p>
+                        <button class="add-to-cart" onclick="addToCart('desert-solitude-3', 'Desert Solitude #3', 225)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="prints limited">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Night Photography Collection</div>
+                        <span class="product-badge">Limited</span>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Urban Nights #2</h4>
+                        <p class="shop-description">Acrylic face mount with aluminum backing</p>
+                        <p class="shop-edition">Edition of 25</p>
+                        <p class="shop-price">$550</p>
+                        <button class="add-to-cart" onclick="addToCart('urban-nights-2', 'Urban Nights #2', 550)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="prints">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Portrait Collection</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Character Study #5</h4>
+                        <p class="shop-description">Black and white silver gelatin print</p>
+                        <p class="shop-edition">Open edition</p>
+                        <p class="shop-price">$195</p>
+                        <button class="add-to-cart" onclick="addToCart('character-study-5', 'Character Study #5', 195)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="shop-item" data-category="books">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Photography Workshop Guide</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4 class="shop-title">Visual Storytelling Guide</h4>
+                        <p class="shop-description">Complete workshop materials and exercises</p>
+                        <p class="shop-edition">Educational edition</p>
+                        <p class="shop-price">$65</p>
+                        <button class="add-to-cart" onclick="addToCart('storytelling-guide', 'Visual Storytelling Guide', 65)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping Info -->
+    <section class="shipping-info">
+        <div class="container">
+            <h2 class="section-title">Shipping & Care Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">🚚</div>
+                    <h3>Shipping</h3>
+                    <p>Free shipping on orders over $200. International shipping available. All prints are carefully packaged in protective tubes or flat packaging with archival materials.</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🎨</div>
+                    <h3>Print Quality</h3>
+                    <p>All prints are made using archival materials and pigment inks for maximum longevity. Museum-quality papers and professional printing standards ensure lasting beauty.</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📜</div>
+                    <h3>Certificates</h3>
+                    <p>Limited edition prints include signed certificates of authenticity. Each piece is personally inspected and approved before shipping to ensure quality.</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🔄</div>
+                    <h3>Returns</h3>
+                    <p>30-day return policy for damaged items. Custom framed pieces are final sale. Contact us within 48 hours of delivery for any concerns about your order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Be the first to know about new print releases, limited editions, and exclusive offers. Join our collector's newsletter for photography enthusiasts.</p>
+                <form class="newsletter-signup" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="cta-button primary">Subscribe</button>
+                </form>
+                <p class="newsletter-note">No spam, unsubscribe at any time. Typically 1-2 emails per month.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>hello@isakgutierrez.com</p>
+                    <p>+1 (555) 123-4567</p>
+                    <p>Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Behance</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p><a href="booking.html">Portrait Sessions</a></p>
+                    <p><a href="booking.html">Wedding Photography</a></p>
+                    <p><a href="booking.html">Corporate Events</a></p>
+                    <p><a href="shop.html">Fine Art Prints</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop Info</h4>
+                    <p>Free shipping over $200</p>
+                    <p>30-day return policy</p>
+                    <p>Certificate of authenticity</p>
+                    <p>Archival quality guaranteed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Isak Gutierrez Photography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

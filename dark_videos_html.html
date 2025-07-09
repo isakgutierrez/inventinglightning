@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | Isak Gutierrez Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ISAK GUTIERREZ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="videos.html" class="active">Videos</a></li>
+            </ul>
+            <div class="cart" onclick="toggleCart()">
+                <span>🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Videos Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Behind the Lens</h1>
+            <p class="page-subtitle">Tutorials, behind-the-scenes content, and insights into my photographic process</p>
+        </div>
+    </section>
+
+    <!-- Featured Video -->
+    <section class="featured-video">
+        <div class="container">
+            <div class="video-showcase">
+                <div class="video-player">
+                    <div class="photo-frame large video-frame">
+                        <div class="video-placeholder" onclick="playVideo('urban-masterclass')">
+                            <div class="play-button">▶</div>
+                            <div class="video-overlay">
+                                <p>Featured: "Urban Photography Masterclass"</p>
+                                <span class="video-duration">45:30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-details">
+                    <span class="video-category">Featured Tutorial</span>
+                    <h2>Urban Photography Masterclass</h2>
+                    <p class="video-description">Join me as I walk through my complete process for creating compelling urban photography. From scouting locations to post-processing techniques, this comprehensive tutorial covers everything you need to know to elevate your street photography game.</p>
+                    <p>In this in-depth masterclass, we'll explore composition techniques, lighting considerations, and the storytelling elements that make urban photography truly compelling. Perfect for intermediate to advanced photographers looking to refine their approach.</p>
+                    <div class="video-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Duration:</span>
+                            <span class="meta-value">45 minutes</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Level:</span>
+                            <span class="meta-value">Intermediate</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Released:</span>
+                            <span class="meta-value">December 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Views:</span>
+                            <span class="meta-value">28.5K</span>
+                        </div>
+                    </div>
+                    <div class="video-actions">
+                        <button class="cta-button primary" onclick="playVideo('urban-masterclass')">Watch Now</button>
+                        <button class="cta-button secondary" onclick="shareVideo('urban-masterclass')">Share</button>
+                        <button class="cta-button secondary" onclick="addToWishlist('urban-masterclass')">♡ Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Categories -->
+    <section class="video-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">All Videos</button>
+                <button class="category-btn" data-category="tutorials">Tutorials</button>
+                <button class="category-btn" data-category="behind-scenes">Behind the Scenes</button>
+                <button class="category-btn" data-category="gear-reviews">Gear Reviews</button>
+                <button class="category-btn" data-category="client-stories">Client Stories</button>
+                <button class="category-btn" data-category="travel">Travel Photography</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Grid -->
+    <section class="videos-section">
+        <div class="container">
+            <div class="videos-grid">
+                <!-- Tutorial Videos -->
+                <div class="video-item" data-category="tutorials" onclick="playVideo('portrait-lighting')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">22:30</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Tutorial</span>
+                        <h3>Portrait Lighting Techniques</h3>
+                        <p>Master the fundamentals of natural and artificial lighting for portrait photography</p>
+                        <div class="video-stats">
+                            <span class="views">15K views</span>
+                            <span class="date">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item" data-category="tutorials" onclick="playVideo('composition-rules')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">18:45</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Tutorial</span>
+                        <h3>Composition Rules Every Photographer Should Know</h3>
+                        <p>Beyond the rule of thirds: advanced composition techniques for compelling images</p>
+                        <div class="video-stats">
+                            <span class="views">28K views</span>
+                            <span class="date">2 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item" data-category="tutorials" onclick="playVideo('lightroom-workflow')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">35:20</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Tutorial</span>
+                        <h3>Complete Lightroom Workflow</h3>
+                        <p>My complete post-processing workflow from import to final export</p>
+                        <div class="video-stats">
+                            <span class="views">42K views</span>
+                            <span class="date">3 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behind the Scenes -->
+                <div class="video-item" data-category="behind-scenes" onclick="playVideo('wedding-bts')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">12:15</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Behind the Scenes</span>
+                        <h3>Wedding Photography: A Day in the Life</h3>
+                        <p>Follow along as I document Sarah & Michael's beautiful garden wedding</p>
+                        <div class="video-stats">
+                            <span class="views">8.5K views</span>
+                            <span class="date">1 month ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item" data-category="behind-scenes" onclick="playVideo('studio-setup')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">16:40</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Behind the Scenes</span>
+                        <h3>Setting Up My Mobile Studio</h3>
+                        <p>How I create professional portrait setups on location</p>
+                        <div class="video-stats">
+                            <span class="views">12K views</span>
+                            <span class="date">1 month ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item" data-category="behind-scenes" onclick="playVideo('urban-shoot')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">20:15</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Behind the Scenes</span>
+                        <h3>Urban Solitude Series: Behind the Scenes</h3>
+                        <p>Creating the award-winning urban photography series</p>
+                        <div class="video-stats">
+                            <span class="views">18K views</span>
+                            <span class="date">2 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gear Reviews -->
+                <div class="video-item" data-category="gear-reviews" onclick="playVideo('camera-comparison')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">24:10</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Gear Review</span>
+                        <h3>Sony A7R5 vs Canon R6 Mark II</h3>
+                        <p>Real-world comparison for portrait and landscape photography</p>
+                        <div class="video-stats">
+                            <span class="views">35K views</span>
+                            <span class="date">2 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item" data-category="gear-reviews" onclick="playVideo('lens-collection')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">19:30</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Gear Review</span>
+                        <h3>My Essential Lens Collection</h3>
+                        <p>The 5 lenses I use for 90% of my professional work</p>
+                        <div class="video-stats">
+                            <span class="views">21K views</span>
+                            <span class="date">2 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Stories -->
+                <div class="video-item" data-category="client-stories" onclick="playVideo('family-session')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">8:45</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Client Story</span>
+                        <h3>The Johnson Family Session</h3>
+                        <p>Creating authentic family memories in Golden Gate Park</p>
+                        <div class="video-stats">
+                            <span class="views">6.2K views</span>
+                            <span class="date">3 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item" data-category="client-stories" onclick="playVideo('corporate-headshots')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">11:20</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Client Story</span>
+                        <h3>Tech Startup Team Headshots</h3>
+                        <p>Professional branding photography for a growing company</p>
+                        <div class="video-stats">
+                            <span class="views">4.8K views</span>
+                            <span class="date">3 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travel Photography -->
+                <div class="video-item" data-category="travel" onclick="playVideo('iceland-adventure')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">28:15</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Travel</span>
+                        <h3>Iceland Photography Adventure</h3>
+                        <p>Capturing the dramatic landscapes of the Land of Fire and Ice</p>
+                        <div class="video-stats">
+                            <span class="views">18K views</span>
+                            <span class="date">4 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item" data-category="travel" onclick="playVideo('japan-street')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">22:50</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Travel</span>
+                        <h3>Street Photography in Tokyo</h3>
+                        <p>Exploring the vibrant street culture and urban energy of Japan</p>
+                        <div class="video-stats">
+                            <span class="views">31K views</span>
+                            <span class="date">5 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Videos -->
+                <div class="video-item" data-category="tutorials" onclick="playVideo('smartphone-tips')">
+                    <div class="photo-frame">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <div class="video-duration">15:30</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Tutorial</span>
+                        <h3>Professional Results with Your Smartphone</h3>
+                        <p>Tips and techniques for better mobile photography</p>
+                        <div class="video-stats">
+                            <span class="views">45K views</span>
+                            <span class="date">6 months ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Channel CTA -->
+    <section class="youtube-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Subscribe for Weekly Content</h2>
+                <p>Join over 50,000 photographers learning new techniques and staying inspired. New videos every Tuesday covering everything from technical tutorials to creative inspiration.</p>
+                <div class="youtube-stats">
+                    <div class="stat">
+                        <span class="number">52K+</span>
+                        <span class="label">Subscribers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">180+</span>
+                        <span class="label">Videos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">2.1M+</span>
+                        <span class="label">Total Views</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">4.9/5</span>
+                        <span class="label">Rating</span>
+                    </div>
+                </div>
+                <div class="youtube-actions">
+                    <a href="#" class="cta-button primary youtube-btn">Subscribe on YouTube</a>
+                    <a href="#" class="cta-button secondary">Follow on Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop CTA -->
+    <section class="workshop-cta">
+        <div class="container">
+            <div class="workshop-content">
+                <div class="workshop-text">
+                    <h2>Take Your Photography to the Next Level</h2>
+                    <p>Ready for hands-on learning? Join one of my photography workshops for personalized instruction and real-world practice.</p>
+                    <ul class="workshop-features">
+                        <li>Small group sizes (max 8 participants)</li>
+                        <li>Hands-on shooting exercises</li>
+                        <li>Individual feedback and critique</li>
+                        <li>Take-home resources and guides</li>
+                        <li>Lifetime access to workshop community</li>
+                    </ul>
+                    <div class="workshop-actions">
+                        <a href="booking.html" class="cta-button primary">View Workshops</a>
+                        <a href="shop.html" class="cta-button secondary">Digital Courses</a>
+                    </div>
+                </div>
+                <div class="workshop-image">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Photography Workshop</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <div class="modal-header">
+                <h3 id="modalVideoTitle">Video Title</h3>
+                <button class="close-video" onclick="closeVideo()">&times;</button>
+            </div>
+            <div class="video-container">
+                <div class="photo-frame large video-frame">
+                    <div class="video-placeholder-large">
+                        <div class="play-button-large">▶</div>
+                        <p id="modalVideoPlaceholder">Video will play here</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-description">
+                <div class="video-details-modal">
+                    <span id="modalVideoCategory" class="video-category">Category</span>
+                    <p id="modalVideoDescription">Video description will appear here...</p>
+                    <div class="modal-actions">
+                        <button class="cta-button secondary" onclick="shareCurrentVideo()">Share Video</button>
+                        <a href="shop.html" class="cta-button primary">Browse Related Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>hello@isakgutierrez.com</p>
+                    <p>+1 (555) 123-4567</p>
+                    <p>Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Behance</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p><a href="booking.html">Portrait Sessions</a></p>
+                    <p><a href="booking.html">Wedding Photography</a></p>
+                    <p><a href="booking.html">Corporate Events</a></p>
+                    <p><a href="shop.html">Fine Art Prints</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Learning</h4>
+                    <p><a href="videos.html">Video Tutorials</a></p>
+                    <p><a href="booking.html">Photography Workshops</a></p>
+                    <p><a href="shop.html">Digital Courses</a></p>
+                    <p><a href="shop.html">Preset Collections</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Isak Gutierrez Photography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

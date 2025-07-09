@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isak Gutierrez | Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ISAK GUTIERREZ</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+            <div class="cart" onclick="toggleCart()">
+                <span>🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <div class="photo-frame">
+                    <div class="placeholder-image">Featured Photography</div>
+                </div>
+            </div>
+            <div class="hero-text">
+                <h1>ISAK GUTIERREZ</h1>
+                <p class="hero-subtitle">Contemporary Photography</p>
+                <p class="hero-description">Capturing the essence of human emotion and natural beauty through intimate storytelling and bold visual narratives that speak to the soul.</p>
+                <div class="hero-buttons">
+                    <a href="gallery.html" class="cta-button primary">View Portfolio</a>
+                    <a href="booking.html" class="cta-button secondary">Book Session</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Latest Work</h2>
+            <div class="featured-grid">
+                <div class="featured-item">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Urban Solitude Series</div>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Urban Solitude</h3>
+                        <p>An intimate exploration of isolation and connection within metropolitan spaces, revealing the profound beauty found in quiet moments.</p>
+                        <a href="gallery.html" class="view-project">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="featured-item">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Natural Landscapes</div>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Natural Landscapes</h3>
+                        <p>Capturing the raw, untamed beauty of wilderness areas where nature's power and serenity converge in perfect harmony.</p>
+                        <a href="gallery.html" class="view-project">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="featured-item">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Portrait Sessions</div>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Portrait Sessions</h3>
+                        <p>Contemporary portraiture that delves beyond the surface, capturing the authentic character and inner essence of each subject.</p>
+                        <a href="gallery.html" class="view-project">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Isak Gutierrez Portrait</div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>About the Artist</h2>
+                    <p class="lead-text">Isak Gutierrez is a contemporary photographer whose work explores the intersection of human emotion and environmental context.</p>
+                    <p>Based between Los Angeles and New York, his photography captures intimate moments that reveal larger truths about our shared human experience. His approach combines technical precision with emotional depth, creating images that resonate long after viewing.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="number">8+</span>
+                            <span class="label">Years</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">500+</span>
+                            <span class="label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">15+</span>
+                            <span class="label">Awards</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">📸</div>
+                    <h3>Portrait Photography</h3>
+                    <p>Professional headshots, family portraits, and personal branding sessions that capture authentic character and emotion.</p>
+                    <div class="service-price">Starting at $450</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">💒</div>
+                    <h3>Wedding Photography</h3>
+                    <p>Artistic wedding documentation with a photojournalistic approach, preserving your most precious moments forever.</p>
+                    <div class="service-price">Starting at $2,500</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">🏢</div>
+                    <h3>Event Photography</h3>
+                    <p>Corporate events, parties, and special occasions captured with professional expertise and artistic vision.</p>
+                    <div class="service-price">Starting at $350/hr</div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">🎨</div>
+                    <h3>Fine Art Prints</h3>
+                    <p>Limited edition archival prints and custom artwork for collectors, galleries, and interior design projects.</p>
+                    <div class="service-price">From $275</div>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="booking.html" class="cta-button primary">Book Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Preview Section -->
+    <section class="shop-preview">
+        <div class="container">
+            <h2 class="section-title">Fine Art Shop</h2>
+            <div class="shop-grid">
+                <div class="shop-item">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Urban Solitude #1</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4>Urban Solitude #1</h4>
+                        <p class="edition">Limited Edition of 50</p>
+                        <p class="price">$350</p>
+                    </div>
+                </div>
+                
+                <div class="shop-item">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Desert Landscape</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4>Desert Solitude</h4>
+                        <p class="edition">Limited Edition of 25</p>
+                        <p class="price">$425</p>
+                    </div>
+                </div>
+                
+                <div class="shop-item">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Portrait Study</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4>Character Study #3</h4>
+                        <p class="edition">Open Edition</p>
+                        <p class="price">$195</p>
+                    </div>
+                </div>
+                
+                <div class="shop-item">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Photography Book</div>
+                    </div>
+                    <div class="shop-info">
+                        <h4>Collected Works 2020-2024</h4>
+                        <p class="edition">First Edition Hardcover</p>
+                        <p class="price">$85</p>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-cta">
+                <a href="shop.html" class="cta-button secondary">Browse All Prints</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Isak's ability to capture emotion in a single frame is extraordinary. Our family portraits have become treasured heirlooms that will be passed down for generations."</p>
+                        <div class="testimonial-author">
+                            <strong>Sarah Johnson</strong>
+                            <span>Family Portrait Session</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Working with Isak was an absolute dream. His artistic vision and professional approach transformed our wedding photos into stunning works of art."</p>
+                        <div class="testimonial-author">
+                            <strong>Michael & Emma Chen</strong>
+                            <span>Wedding Photography</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The photography workshop opened my eyes to new creative possibilities. Isak is not only a talented artist but an inspiring and patient teacher."</p>
+                        <div class="testimonial-author">
+                            <strong>David Rodriguez</strong>
+                            <span>Workshop Participant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Create Something Beautiful Together</h2>
+                <p>Ready to capture your story? Get in touch to discuss your vision and bring it to life through the art of photography.</p>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="cta-button primary">Start Your Project</a>
+                    <a href="about.html" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>hello@isakgutierrez.com</p>
+                    <p>+1 (555) 123-4567</p>
+                    <p>Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Behance</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p><a href="booking.html">Portrait Sessions</a></p>
+                    <p><a href="booking.html">Wedding Photography</a></p>
+                    <p><a href="booking.html">Corporate Events</a></p>
+                    <p><a href="shop.html">Fine Art Prints</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with latest work and workshop announcements</p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Isak Gutierrez Photography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

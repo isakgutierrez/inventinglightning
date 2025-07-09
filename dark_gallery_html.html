@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Isak Gutierrez Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ISAK GUTIERREZ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+            <div class="cart" onclick="toggleCart()">
+                <span>🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Portfolio</h1>
+            <p class="page-subtitle">A curated collection of photographic work spanning multiple series and subjects, each telling a unique story through light, composition, and emotion</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="urban">Urban Series</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="documentary">Documentary</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project">
+        <div class="container">
+            <div class="project-showcase">
+                <div class="project-image">
+                    <div class="photo-frame large">
+                        <div class="placeholder-image">Urban Solitude - Featured Series</div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <span class="project-category">Featured Series</span>
+                    <h2>Urban Solitude</h2>
+                    <p class="project-description">An intimate exploration of isolation and connection within metropolitan spaces. This ongoing series captures quiet moments of human experience against the backdrop of bustling city life, revealing the profound beauty found in solitude and reflection.</p>
+                    <p>Shot over 18 months across Los Angeles, New York, and Chicago, these photographs examine the relationship between individual experience and collective urban energy, finding poetry in the mundane and extraordinary in the overlooked.</p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Medium:</span>
+                            <span class="meta-value">Digital & Film</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Year:</span>
+                            <span class="meta-value">2023-2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Locations:</span>
+                            <span class="meta-value">Los Angeles, New York, Chicago</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Exhibitions:</span>
+                            <span class="meta-value">Gallery Modern, LACMA</span>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <button class="cta-button primary" onclick="openProjectLightbox('urban-solitude')">View Full Series</button>
+                        <a href="shop.html" class="cta-button secondary">Purchase Prints</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Urban Series -->
+                <div class="gallery-project" data-category="urban" onclick="openProjectLightbox('urban-nights')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Urban Nights</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Urban Nights</h3>
+                                <p>City life after dark - 2024</p>
+                                <span class="image-count">12 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="urban" onclick="openProjectLightbox('street-geometry')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Street Geometry</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Street Geometry</h3>
+                                <p>Architectural forms in motion - 2023</p>
+                                <span class="image-count">18 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="urban" onclick="openProjectLightbox('metro-rhythms')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Metro Rhythms</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Metro Rhythms</h3>
+                                <p>Public transportation series - 2024</p>
+                                <span class="image-count">16 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait Series -->
+                <div class="gallery-project" data-category="portraits" onclick="openProjectLightbox('faces-of-la')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Faces of LA</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Faces of LA</h3>
+                                <p>Character portraits - 2024</p>
+                                <span class="image-count">25 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="portraits" onclick="openProjectLightbox('studio-sessions')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Studio Sessions</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Studio Sessions</h3>
+                                <p>Contemporary portraiture - 2023-2024</p>
+                                <span class="image-count">30 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="portraits" onclick="openProjectLightbox('character-studies')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Character Studies</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Character Studies</h3>
+                                <p>Intimate portraiture - 2023</p>
+                                <span class="image-count">22 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Landscape Series -->
+                <div class="gallery-project" data-category="landscapes" onclick="openProjectLightbox('california-coast')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">California Coast</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>California Coast</h3>
+                                <p>Pacific shoreline series - 2024</p>
+                                <span class="image-count">20 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="landscapes" onclick="openProjectLightbox('desert-solitude')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Desert Solitude</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Desert Solitude</h3>
+                                <p>Mojave wilderness - 2023</p>
+                                <span class="image-count">15 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="landscapes" onclick="openProjectLightbox('mountain-peaks')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Mountain Peaks</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Mountain Peaks</h3>
+                                <p>Sierra Nevada expedition - 2023</p>
+                                <span class="image-count">28 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Series -->
+                <div class="gallery-project" data-category="events" onclick="openProjectLightbox('wedding-stories')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Wedding Stories</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Wedding Stories</h3>
+                                <p>Love captured - 2023-2024</p>
+                                <span class="image-count">40 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="events" onclick="openProjectLightbox('corporate-events')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Corporate Events</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Corporate Events</h3>
+                                <p>Professional gatherings - 2024</p>
+                                <span class="image-count">35 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentary Series -->
+                <div class="gallery-project" data-category="documentary" onclick="openProjectLightbox('community-voices')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Community Voices</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Community Voices</h3>
+                                <p>Social documentary - 2023-2024</p>
+                                <span class="image-count">50 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-project" data-category="documentary" onclick="openProjectLightbox('behind-scenes')">
+                    <div class="photo-frame">
+                        <div class="placeholder-image">Behind the Scenes</div>
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Behind the Scenes</h3>
+                                <p>Artist at work - 2024</p>
+                                <span class="image-count">22 images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery CTA Section -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in Commission Work?</h2>
+                <p>Each project tells a unique story. Let's discuss how we can create something meaningful together that captures your vision and brings it to life.</p>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="cta-button primary">Start a Project</a>
+                    <a href="shop.html" class="cta-button secondary">Browse Prints</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Lightbox -->
+    <div id="projectLightbox" class="project-lightbox">
+        <div class="lightbox-header">
+            <div class="lightbox-title">
+                <h3 id="projectTitle">Project Title</h3>
+                <p id="projectSubtitle">Project subtitle</p>
+            </div>
+            <button class="close-lightbox" onclick="closeProjectLightbox()">×</button>
+        </div>
+        <div class="lightbox-content">
+            <div class="project-info">
+                <div class="project-description">
+                    <p id="projectDescription">Project description will appear here...</p>
+                </div>
+                <div class="project-navigation">
+                    <button id="prevImage" onclick="previousImage()" class="nav-btn">← Previous</button>
+                    <span id="imageCounter">1 / 10</span>
+                    <button id="nextImage" onclick="nextImage()" class="nav-btn">Next →</button>
+                </div>
+                <div class="lightbox-actions">
+                    <button class="cta-button secondary" onclick="addCurrentImageToCart()">Add to Cart</button>
+                    <a href="shop.html" class="cta-button primary">View in Shop</a>
+                </div>
+            </div>
+            <div class="lightbox-image-container">
+                <div class="photo-frame lightbox-frame">
+                    <div class="placeholder-image" id="lightboxImage">Image will appear here</div>
+                </div>
+                <div class="image-details">
+                    <h4 id="imageTitle">Image Title</h4>
+                    <p id="imageDescription">Image description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>hello@isakgutierrez.com</p>
+                    <p>+1 (555) 123-4567</p>
+                    <p>Los Angeles, CA</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Behance</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <p><a href="booking.html">Portrait Sessions</a></p>
+                    <p><a href="booking.html">Wedding Photography</a></p>
+                    <p><a href="booking.html">Corporate Events</a></p>
+                    <p><a href="shop.html">Fine Art Prints</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with latest work and workshop announcements</p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Isak Gutierrez Photography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
